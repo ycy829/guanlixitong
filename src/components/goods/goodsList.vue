@@ -11,11 +11,12 @@
                     <div class="desc">
                         <div class="sell">
                             <span>￥{{prod.sell_price}}</span>
-                            <s>￥{{prod.market_price}}</s>
+                            <div class="hot">热卖中</div>
+                            <!-- ￥{{prod.market_price}}-->
                         </div>
                         <div class="detail">
                             <div class="hot">
-                                热卖中
+                                <s>￥{{prod.market_price}}</s> 
                             </div>
                             <div class="count">
                                 剩{{prod.stock_quantity}}件
@@ -86,8 +87,9 @@ export default {
 .mui-table-view.mui-grid-view .mui-table-view-cell > a:not(.mui-btn) {
     margin: 0px;
     padding: 0px;
-    border: 1px solid #5c5c5c;
-    box-shadow: 0 0 4px #666;
+    border: 1px solid #eee;
+    /*box-shadow: 0 0 4px #666;*/
+    /*box-shadow: 0px 4px 10px #666;*/
 }
 
 .sell > span {
@@ -96,12 +98,24 @@ export default {
     text-align: left;
 }
 
-.detail >.hot {
-    float: left;
-    text-align: left;
+
+.mui-media-body{
+    /*height: 20px;
+    line-height: 20px;*/
+    margin: 0 2px 0 2px;
+}
+.sell >.hot {
+    color: #cc0303;
+    /*float: left;*/
+    text-align: right;
     font-size: 15px;
 }
 
+.detail s{
+    font-size: 16px;
+    float: left;
+    color: #999;
+}
 .detail >.count {
     float: right;
     text-align: right;
@@ -116,11 +130,12 @@ export default {
 }
 
 .desc {
+    padding-top: 5px; 
     color: rgba(92, 92, 92, 0.8);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #f7f7f7;
 }
 
 .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-object {
-    height: 200px;
+    height: 180px;
 }
 </style>
